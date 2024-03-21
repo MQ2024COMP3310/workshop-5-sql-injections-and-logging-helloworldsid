@@ -126,6 +126,11 @@ public class SQLiteConnectionManager {
      * @param word the word to store
      */
     public void addValidWord(int id, String word) {
+        
+        if (id <= 0 || word == null || word.isEmpty()) {
+            System.out.println("Invalid input");
+            return;
+        }
 
         String sql = "INSERT INTO validWords(id,word) VALUES(?, ?)";
 
